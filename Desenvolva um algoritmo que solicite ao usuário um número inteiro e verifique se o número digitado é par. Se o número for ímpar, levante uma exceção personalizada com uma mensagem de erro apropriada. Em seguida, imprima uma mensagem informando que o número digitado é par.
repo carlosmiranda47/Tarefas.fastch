@@ -1,0 +1,11 @@
+# um codigo que pedira para digitar um númeri inteiro e retorna para o usuario.
+while True:
+	try:
+	    numero = int(input("Digite um número inteiro:"))
+	       if numero % 2 == 0:
+	       	print(f"o número {numero} é par")
+	       	break
+	       else:
+	       	print("Erro: o número digitado é impar.")
+	except ValueError:
+		print("Erro: você precisa digitar um número inteiro.") 
