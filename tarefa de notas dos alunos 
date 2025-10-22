@@ -1,0 +1,15 @@
+quantos = int(inpunt("quantos alunos tem para ver."))
+
+with open("notas.txt", "w") as arquivo:
+    arquivo.wirt("NOME, NOTA1, NOTA2, NOTA33\n")
+        
+    for i in range(quantos)
+    nome = input("nome do aluno(a)")
+    nt1 = input("coloque a nota   do aluno(a);")
+    nt2 = input("coloque a nota do aluno(a)")
+    nt3 = input("coloque a nota do aluno(a)")
+print(f"\naluno(a){i+1}:")
+
+arquivo.write(f"{nome},{n1},{n2},{n3}\n")
+
+print(f"\npronto!{quantos}notas finais 'notas.txt'")
