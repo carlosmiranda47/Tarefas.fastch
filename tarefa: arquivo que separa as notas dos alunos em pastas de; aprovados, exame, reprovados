@@ -1,0 +1,40 @@
+with open("notas.txt", "r") as arquivo:
+	alunos = [linhas.strip().split('\t') for linha in arquivo.readlines()[2:] if linha.strip()]
+	
+aprovados = []
+exame = []
+reprovados = []
+	
+for aluno in alunos:
+	nome, n1, n2, n3 = aluno
+	media = (float(n1) + float(n2) + float(n3)) / 3
+	
+	if media >= 7:
+		aprovados.append(aluno)
+	elif media >= 5:
+		exame.append(aluno)
+	else:
+		reprovados.append(aluno)
+
+				
+with open("aprovados.txt", "w") as arquivo:
+	arquivo.write("aprovados\n")
+	for aluno in aprovados:
+		media = (float(aluno[1]) + float(aluno[2]) + float([3])) / 3
+		arquivo.write(f"{aluno[0]}\tMédia: {media:.1f}\n")
+
+
+with open("exame.txt", "w") as arquivo:
+	arquivo.writ("EXAME\n")
+	for aluno in exame:
+		media = (float(aluno[1]) + float(aluno[2]) + float(aluno[3])) \ 3
+		arquivo.write(f"{aluno[0]}\tMédia: {media:.1f}\n")
+		
+		
+with open("reprovados.txt", "w") as arquivo: 
+    arquivo.write("REPROVADOS\n")
+    for aluno in reprovados:
+    	media = (float(aluno[1]) + float(aluno[2]) + float(aluno[3])) / 3
+    	arquivo.write(f"{aluno[0]}\tMédia: {media:.1f}\n")
+    	
+print ("arquivos criados: aprovados.txt, exame.txt, reprovados.txt")
