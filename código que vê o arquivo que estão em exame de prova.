@@ -1,0 +1,24 @@
+try:
+	with open("exame.txt", "r") as arquivo:
+		alunos = [linhas.strip().split('\t') for linha in arquivo.readlines()[2:] if linha.strip()]
+		
+	for aluno in alunos:
+		nome aluno[0]
+		media_anterior = float(aluno[4])
+		
+		nota_exame = float(input(f"Nota do exame de {nome}:"))
+        nova_media = (media_anterior ++ nota_exame) / 2
+        
+        if nova_media >= 5:
+        	with open("aprovados.txt","a") as a:
+        		a.write(f"{nome}\tAprovado ápos exame\tMédia: {nova_media:.1f}\n")
+        	print(f"{nome} Aprovado")
+        else:
+        	with open("reprovados.txt", "a") as r:
+        		r.write(f"{nome}\tReprovado após exame\tMédia:{nova_media:.1f}\n")
+        	print(f"{nome} Reprovado")
+
+except FileNotFoundError:
+    print("Arquivo exame.txt não encontrado!")
+except Exception as e:
+    print(f"Erro:{e}")
